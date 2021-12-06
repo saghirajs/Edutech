@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="TabGestion" prefHeight="564.0" prefWidth="987.0" stylesheets="@../../css/dark-theme.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Absence.AddAbsence1Controller">
+  <tabs>
+    <Tab text="Ajouter Absence">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="DatePicker">
+               <children>
+                  <Label layoutX="265.0" layoutY="142.0" style="-fx-text-fill: #FFFF8D;" styleClass="axis-label" text="Matiére" />
+                  <Label layoutX="255.0" layoutY="197.0" style="-fx-text-fill: #FFFF8D;" styleClass="axis-label" text="NomEtudiant" />
+                  <Label layoutX="248.0" layoutY="250.0" style="-fx-text-fill: #FFFF8D;" styleClass="axis-label" text="DateAbsence" />
+                  <ChoiceBox fx:id="IDTime" layoutX="423.0" layoutY="293.0" prefHeight="31.0" prefWidth="220.0" styleClass="choiceBox" />
+                  <Label layoutX="255.0" layoutY="309.0" style="-fx-text-fill: #FFFF8D;" styleClass="axis-label" text="TempsAbsence" />
+                  <Button fx:id="ValidBTN" layoutX="449.0" layoutY="385.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="39.0" prefWidth="182.0" text="Valider" />
+                  <DatePicker fx:id="DateAbs" layoutX="423.0" layoutY="234.0" styleClass="DatePicker" />
+                  <ChoiceBox fx:id="TextMatiere" layoutX="422.0" layoutY="126.0" prefHeight="31.0" prefWidth="219.0" styleClass="choiceBox" />
+                  <Label layoutX="272.0" layoutY="90.0" style="-fx-text-fill: #FFFF8D;" styleClass="axis-label" text="classe" />
+                  <ChoiceBox fx:id="classeName" layoutX="423.0" layoutY="74.0" prefHeight="31.0" prefWidth="219.0" styleClass="choiceBox" />
+                  <ChoiceBox fx:id="TextEtudiant" layoutX="423.0" layoutY="181.0" prefHeight="31.0" prefWidth="216.0" styleClass="choiceBox" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="AfficherAbs" text="Afficher Absence">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="361.0" prefWidth="344.0">
+               <children>
+                  <TableView fx:id="Table" layoutX="15.0" layoutY="64.0" prefHeight="397.0" prefWidth="968.0">
+                    <columns>
+                        <TableColumn fx:id="IDColumn" prefWidth="75.0" text="id" />
+                      <TableColumn fx:id="ColumnMatiere" prefWidth="234.0" text="Matiére" />
+                        <TableColumn fx:id="ColumnDate" prefWidth="181.0" text="Date Absence" />
+                        <TableColumn fx:id="ColumnEtat" minWidth="0.0" prefWidth="127.0" text="Etat" />
+                        <TableColumn fx:id="ColumnIDEtu" prefWidth="104.0" text="NomEtudiant" />
+                    </columns>
+                     
+                  </TableView>
+                  <Button fx:id="Rafraichir" layoutX="434.0" layoutY="470.0" mnemonicParsing="false" onAction="#Rafraichir" text="Rafraichir" />
+                  <TextField fx:id="RechercheEtudiantAbs" layoutX="728.0" layoutY="14.0" onAction="#RechercheEtudiantAbs" style="-fx-background-color: #2A2E37; -fx-border-color: #FFFF8D; -fx-border-width: 0px 0px 1px 0px;" />
+                  <Label layoutX="606.0" layoutY="19.0" style="-fx-text-fill: #FFFF8D;" text="CIN Etudiant" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="ModifierAbs" text="Modifier Absence">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="273.0" layoutY="148.0" style="-fx-text-fill: #FFFF8D;" text="Nom Etudiant" />
+                  <TextField fx:id="TextIDEtudiantM" layoutX="396.0" layoutY="129.0" prefHeight="31.0" prefWidth="218.0" style="-fx-background-color: #2A2E37; -fx-border-color: #FFFF8D; -fx-border-width: 0px 0px 1px 0px;" />
+                  <ChoiceBox fx:id="ChoiceEtat" layoutX="395.0" layoutY="204.0" prefHeight="31.0" prefWidth="220.0" styleClass="choiceBox" />
+                  <Label layoutX="273.0" layoutY="223.0" style="-fx-text-fill: #FFFF8D;" text="Etat" />
+                  <Button fx:id="BTNModifier" layoutX="424.0" layoutY="308.0" mnemonicParsing="false" onAction="#modifier" prefHeight="39.0" prefWidth="162.0" text="Valider" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="showStat" onSelectionChanged="#showStat" text="Statistique">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BarChart fx:id="barchart" animated="false" layoutX="31.0" layoutY="63.0" prefHeight="443.0" prefWidth="930.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yaxis" animated="false" autoRanging="false" minWidth="-Infinity" minorTickCount="1" minorTickLength="0.0" side="LEFT" tickLabelFill="#e40f0f" tickLength="1.0" tickUnit="1.0" upperBound="25.0">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></NumberAxis>
+                    </yAxis>
+                  </BarChart>
+                  <ChoiceBox fx:id="ChoiceJourS" layoutX="190.0" layoutY="14.0" prefHeight="31.0" prefWidth="173.0" styleClass="choiceBox" />
+                  <Label layoutX="46.0" layoutY="33.0" style="-fx-text-fill: #FFFF8D;" text="Jour de la semaine" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

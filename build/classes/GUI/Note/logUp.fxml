@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="l" prefHeight="609.0" prefWidth="419.0" stylesheets="@../../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Note.LogUpController">
+   <children>
+      <JFXTextField fx:id="fName" labelFloat="true" layoutX="80.0" layoutY="94.0" prefHeight="33.0" prefWidth="259.0" promptText="First name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="lName" labelFloat="true" layoutX="80.0" layoutY="156.0" prefHeight="33.0" prefWidth="259.0" promptText="Last name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="cinF" labelFloat="true" layoutX="80.0" layoutY="215.0" prefHeight="34.0" prefWidth="259.0" promptText="CIN">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXTextField fx:id="mailF" labelFloat="true" layoutX="80.0" layoutY="276.0" prefHeight="33.0" prefWidth="259.0" promptText="Email">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="pwd1" labelFloat="true" layoutX="80.0" layoutY="336.0" prefHeight="33.0" prefWidth="259.0" promptText="Password">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="pwd2" labelFloat="true" layoutX="80.0" layoutY="396.0" prefHeight="34.0" prefWidth="259.0" promptText="Password">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXPasswordField>
+      <ChoiceBox fx:id="checkRole" layoutX="79.0" layoutY="451.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@../css/dark-theme.css" />
+      <JFXButton fx:id="register" layoutX="80.0" layoutY="517.0" prefHeight="40.0" prefWidth="123.0" styleClass="login-button" text="Register now" />
+      <JFXButton fx:id="cancel" layoutX="225.0" layoutY="517.0" prefHeight="40.0" prefWidth="90.0" styleClass="login-button" text="Cancel" />
+      <Label layoutX="126.0" layoutY="14.0" prefHeight="70.0" prefWidth="198.0" text="Subscribe" textFill="#ffff8d">
+         <font>
+            <Font name="Calibri Light Italic" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="570.0" text="You already have an account ?" textFill="#fcf8f8">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="login_b" layoutX="303.0" layoutY="564.0" mnemonicParsing="false" onAction="#toSignIn" styleClass="btn" text="LOGIN" />
+     
+   </children>
+</AnchorPane>
